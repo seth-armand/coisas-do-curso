@@ -69,7 +69,6 @@ public void ex3(){
             filaPreferencial = true;
         }
 
-        // Encaminha para a fila apropriada
         if (filaPreferencial) {
             System.out.println("Você deve ser encaminhado para a fila preferencial.");
         } else {
