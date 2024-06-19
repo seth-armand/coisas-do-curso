@@ -1,8 +1,8 @@
-package primeira.lista.lista;
+package primeira.lista.lista.com;
 
 import java.util.Scanner;
 
-public record lista2() {
+public record exercicios2() {
 
 public void ex1(){
 
