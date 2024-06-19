@@ -154,7 +154,72 @@ public class ListaApplication {
 
 	public void ex7(){
 
+		Scanner scanner = new Scanner(System.in);
 
+		System.out.print("Digite um número: ");
+        int numero = scanner.nextInt();
+
+		System.out.print("Digite o divisor: ");
+        int divisor = scanner.nextInt();
+
+		scanner.close();
+
+		if (divisor != 0 && numero % divisor == 0) {
+            System.out.println("O número " + numero + " é divisível por " + divisor + ".");
+        } else if (divisor == 0) {
+            System.out.println("Divisor não pode ser zero.");
+        } else {
+            System.out.println("O número " + numero + " não é divisível por " + divisor + ".");
+        }
 
 		}
-    }	
+
+	public void ex8(){
+
+		Scanner scanner = new Scanner(System.in);
+
+		String[] perguntas = {
+            "Qual é a capital da França?\nA) Paris\nB) Londres\nC) Roma\nD) Berlim",
+            "Quem escreveu 'Dom Casmurro'?\nA) Machado de Assis\nB) José de Alencar\nC) Clarice Lispector\nD) Graciliano Ramos",
+            "Qual é o maior planeta do Sistema Solar?\nA) Terra\nB) Marte\nC) Júpiter\nD) Saturno",
+            "Quem pintou a Mona Lisa?\nA) Leonardo da Vinci\nB) Michelangelo\nC) Rafael\nD) Donatello",
+            "Em que ano o homem pisou na Lua pela primeira vez?\nA) 1965\nB) 1969\nC) 1972\nD) 1980"
+        };
+
+		char[] respostasCorretas = {'A', 'A', 'C', 'A', 'B'};
+
+		int erros = 0;
+        int acertos = 0;
+
+		for (int i = 0; i < perguntas.length; i++) {
+            
+            System.out.println(perguntas[i]);
+
+			System.out.print("Sua resposta: ");
+            char resposta = scanner.next().toUpperCase().charAt(0);
+
+			if (resposta == respostasCorretas[i]) {
+                acertos++;
+                System.out.println("Resposta correta!\n");
+            } else {
+                erros++;
+                System.out.println("Resposta errada!\n");
+            }
+
+			if (erros == 3) {
+                System.out.println("Você errou 3 vezes. Você perdeu o jogo.");
+                break;
+            }
+        }
+
+		if (erros < 3) {
+            System.out.println("Você chegou ao final do jogo.");
+            System.out.println("Número de acertos: " + acertos);
+        }
+
+        // Fecha o scanner
+        scanner.close();
+        
+	    }
+
+    }
