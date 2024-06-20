@@ -220,7 +220,7 @@ public void ex8(){
        
         scanner.close();
         
-		
+
 	    }
 
-    }
+     }
